@@ -351,6 +351,7 @@ namespace MySql.Data.MySqlClient
       DBVersion version = driver.Version;
 
       if (charSets == null || charSets.Count == 0 || CharacterSetIndex == -1) return;
+      if (!charSets.ContainsKey(CharacterSetIndex)) return;
       if (charSets[CharacterSetIndex] == null) return;
 
       CharacterSet cs = CharSetMap.GetCharacterSet(version, (string)charSets[CharacterSetIndex]);
